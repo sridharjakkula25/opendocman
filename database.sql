@@ -248,24 +248,25 @@ PRIMARY KEY ( `id` ) ,
 UNIQUE ( `name` )
 ) ENGINE = MYISAM;
 
-INSERT INTO `odm_settings` VALUES(NULL,'debug', 'False', '(True/False) - Default=False - Debug the installation (not working)', 'bool');
-INSERT INTO `odm_settings` VALUES(NULL,'demo', 'False', '(True/False) This setting is for a demo installation, where random people will be all loggging in as the same username/password like \"demo/demo\". This will keep users from removing files, users, etc.', 'bool');
-INSERT INTO `odm_settings` VALUES(NULL,'authen', 'mysql', '(Default = mysql) Currently only MySQL authentication is supported', '');
-INSERT INTO `odm_settings` VALUES(NULL,'title', 'Document Repository', 'This is the browser window title', 'maxsize=255');
-INSERT INTO `odm_settings` VALUES(NULL,'site_mail', 'root@localhost', 'The email address of the administrator of this site', 'email|maxsize=255|req');
-INSERT INTO `odm_settings` VALUES(NULL,'root_id', '1', 'This variable sets the root user id.  The root user will be able to access all files and have authority for everything.', 'num|req');
-INSERT INTO `odm_settings` VALUES(NULL,'dataDir', '/usr/local/opendocman/data', 'location of file repository. This should ideally be outside the Web server root. Make sure the server has permissions to read/write files to this folder!. (Examples: Linux - /var/www/document_repository/ : Windows - c:/document_repository/', 'maxsize=255');
-INSERT INTO `odm_settings` VALUES(NULL,'max_filesize', '5000000', 'Set the maximum file upload size', 'num|maxsize=255');
-INSERT INTO `odm_settings` VALUES(NULL,'revision_expiration', '90', 'This var sets the amount of days until each file needs to be revised,  assuming that there are 30 days in a month for all months.', 'num|maxsize=255');
-INSERT INTO `odm_settings` VALUES(NULL,'file_expired_action', '1', 'Choose an action option when a file is found to be expired The first two options also result in sending email to reviewer  (1) Remove from file list until renewed (2) Show in file list but non-checkoutable (3) Send email to reviewer only (4) Do Nothing', 'num');
-INSERT INTO `odm_settings` VALUES(NULL,'authorization', 'True', 'True or False. If set True, every document must be reviewed by an admin before it can go public. To disable set to False. If False, all newly added/checked-in documents will immediately be listed', 'bool');
-INSERT INTO `odm_settings` VALUES(NULL,'allow_signup', 'False', 'Should we display the sign-up link?', 'bool');
-INSERT INTO `odm_settings` VALUES(NULL,'allow_password_reset', 'False', 'Should we allow users to reset their forgotten password?', 'bool');
-INSERT INTO `odm_settings` VALUES(NULL,'try_nis', 'False', 'Attempt NIS password lookups from YP server?', 'bool');
-INSERT INTO `odm_settings` VALUES(NULL,'theme', 'tweeter', 'Which theme to use?', '');
-INSERT INTO `odm_settings` VALUES(NULL,'language', 'english', 'Set the default language (english, spanish, turkish, etc.). Local users may override this setting. Check include/language folder for languages available', 'alpha|req');
-INSERT INTO `odm_settings` VALUES(NULL,'base_url', 'http://localhost/opendocman', 'Set this to the url of the site. No need for trailing \"/\" here', 'url');
-INSERT INTO `odm_settings` VALUES(NULL,'max_query', '500', 'Set this to the maximum number of rows you want to be returned in a file listing.', 'num');
+INSERT INTO `odm_settings` 
+VALUES (1,'debug','False','(True/False) - Default=False - Debug the installation (not working)','bool'),
+       (2,'demo','False','(True/False) This setting is for a demo installation, where random people will be all loggging in as the same username/password like \"demo/demo\". This will keep users from removing files, users, etc.','bool'),
+       (3,'authen','mysql','(Default = mysql) Currently only MySQL authentication is supported',''),
+       (4,'title','Desaur Document Repository','This is the browser window title','maxsize=255'),
+       (5,'site_mail','root@localhost','The email address of the administrator of this site','email|maxsize=255|req'),
+       (6,'root_id','1','This variable sets the root user id.  The root user will be able to access all files and have authority for everything.','num|req'),
+       (7,'dataDir','/Library/WebServer/Documents/opendocman/data/','location of file repository. This should ideally be outside the Web server root. Make sure the server has permissions to read/write files to this folder!. (Examples: Linux - /var/www/document_repository/ : Windows - c:/document_repository/','maxsize=255'),
+       (8,'max_filesize','5000000','Set the maximum file upload size','num|maxsize=255'),
+       (9,'revision_expiration','90','This var sets the amount of days until each file needs to be revised,  assuming that there are 30 days in a month for all months.','num|maxsize=255'),
+       (10,'file_expired_action','1','Choose an action option when a file is found to be expired The first two options also result in sending email to reviewer  (1) Remove from file list until renewed (2) Show in file list but non-checkoutable (3) Send email to reviewer only (4) Do Nothing','num'),
+       (11,'authorization','True','True or False. If set True, every document must be reviewed by an admin before it can go public. To disable set to False. If False, all newly added/checked-in documents will immediately be listed','bool'),
+       (12,'allow_signup','False','Should we display the sign-up link?','bool'),
+       (13,'allow_password_reset','False','Should we allow users to reset their forgotten password?','bool'),
+       (14,'try_nis','False','Attempt NIS password lookups from YP server?','bool'),
+       (15,'theme','tweeter','Which theme to use?',''),
+       (16,'language','english','Set the default language (english, spanish, turkish, etc.). Local users may override this setting. Check include/language folder for languages available','alpha|req'),
+       (17,'base_url','http://localhost/opendocman','Set this to the url of the site. No need for trailing \"/\" here','url'),
+       (18,'max_query','500','Set this to the maximum number of rows you want to be returned in a file listing.','num');
 
 CREATE  TABLE IF NOT EXISTS `odm_filetypes` (
 `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT ,
