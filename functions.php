@@ -57,7 +57,7 @@ foreach ($GLOBALS['lang'] as $key => $value) {
 if (!is_dir($GLOBALS['CONFIG']['dataDir'])) {
     echo $GLOBALS['lang']['message_datadir_problem_exists'] . ' <a href="settings.php?submit=update"> ' . $GLOBALS['lang']['label_settings'] . '</a><br />';
 } elseif (!is_writable($GLOBALS['CONFIG']['dataDir'])) {
-    echo $GLOBALS['lang']['message_datadir_problem_writable'] . ' <a href="settings.php?submit=update"> ' . $GLOBALS['lang']['label_settings'] . '</a><br />';
+    echo $GLOBALS['lang']['message_datadir_problem_writable'] . $GLOBALS['CONFIG']['dataDir'] . ' <a href="settings.php?submit=update"> ' . $GLOBALS['lang']['label_settings'] . '</a><br />';
 }
 
 
